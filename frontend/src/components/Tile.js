@@ -1,12 +1,16 @@
 import React from 'react';
+import './Tile.css';
 
 const Tile = ({ data }) => {
+    const width = data.size?.width;
+    const height = data.size?.height;
+
     const renderContent = () => {
         switch (data.type) {
             case 'embed':
-                return <iframe src={data.url} title={data.name} width="100%" height="300px"></iframe>;
+                return <iframe src={data.url} title={data.name} style={{ width, height }}></iframe>;
             case 'image':
-                return <img src={data.url} alt={data.name} width="100%" />;
+                return <img src={data.url} alt={data.name} style={{ width, height }} />;
             default:
                 return <div>Unsupported type: {data.type}</div>;
         }
