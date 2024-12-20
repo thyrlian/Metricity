@@ -1,9 +1,11 @@
+require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const snapshotRoutes = require('./routes/snapshotRoutes');
+const config = require('./config/appConfig');
+const PORT = config.server.port;
 
 const app = express();
-const PORT = process.env.PORT || 5001;
 
 app.use(cors());
 
