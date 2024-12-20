@@ -2,5 +2,13 @@
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  },
+  "scripts": {
+    "start:backend": "node backend/src/index.js",
+    "start:frontend": "npm --prefix ./frontend start",
+    "start": "concurrently --kill-others -n \"backend,frontend\" -c \"cyan,magenta\" \"npm run start:backend\" \"npm run start:frontend\""
   }
 }
