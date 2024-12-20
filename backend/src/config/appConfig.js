@@ -1,6 +1,10 @@
 const config = {
   server: {
     port: process.env.PORT_BACKEND
+  },
+  app: {
+    name: 'Metricity Server',
+    version: '1.0.0'
   }
 };
 
